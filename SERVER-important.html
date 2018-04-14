@@ -1,0 +1,23 @@
+<script>
+    // Run first
+    var script = document.createElement('script');
+    script.src = "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js";
+    document.getElementsByTagName('head')[0].appendChild(script);
+
+
+    // And then
+	var socket = io('http://huu.yez.vn:4000');
+	socket.on('server-send-mau',function(data){
+        $('#txtfield').val(data.cl + data.time);			
+	});
+	document.getElementById('red').onclick= function(){
+        var redClicked = 'red' + " " + $('#txtfield').val();
+        var sendDate = new Date().getMilliseconds();
+        socket.emit('client-send-mau',redClicked + " " + sendDate.toString());
+	};
+	document.getElementById('green').onclick= function(){
+        var greenClicked = 'green' + " " + $('#txtfield').val();
+        var sendDate = new Date().getMilliseconds();
+        socket.emit('client-send-mau',greenClicked + " " + sendDate.toString());
+	};
+	

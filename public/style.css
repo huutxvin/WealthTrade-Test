@@ -1,0 +1,25 @@
+#red, #green {
+	width: 70px;
+	height: 70px;
+	border: 1px solid white;
+	border-radius: 35px;
+	float: left;
+}
+#red {
+	background: red;
+}
+#yellow {
+	background: yellow;
+}
+#green {
+	background: green;
+}
+.container {
+    width: 152px;
+    margin:  0 auto;
+    min-height:  500px;
+    text-align:  center;
+}
+.color {
+    margin: 35px 0px;
+}
